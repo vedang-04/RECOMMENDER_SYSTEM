@@ -2,7 +2,7 @@ jupyter_notebooks*
 */env*
 */venv*
 .circleci*
-ds_project_package/image_classification_model
+ds_project_package/recommender_model
 *.env
 *.log
 .git

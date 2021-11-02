@@ -4,16 +4,16 @@ FROM python:3.9.5
 # Create the user that will run the app
 RUN adduser --disabled-password --gecos '' ml-api-user
 
-WORKDIR /opt/ds_project_api
+WORKDIR /opt/api
 
 ARG PIP_EXTRA_INDEX_URL
 
 # Install requirements, including from Gemfury
-ADD ./ds_project_api /opt/ds_project_api/
+ADD ./api /opt/api/
 RUN pip install --upgrade pip
-RUN pip install -r /opt/ds_project_api/requirements_api/requirements.txt
+RUN pip install -r /opt/requirements/test_requirements.txt
 
-RUN chmod +x /opt/ds_project_api/run.sh
+RUN chmod +x /opt/api/run.sh
 RUN chown -R ml-api-user:ml-api-user ./
 
 USER ml-api-user
