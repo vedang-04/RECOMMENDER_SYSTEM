@@ -1,0 +1,10 @@
+jupyter_notebooks*
+*/env*
+*/venv*
+.circleci*
+ds_project_package/image_classification_model
+*.env
+*.log
+.git
+.gitignore
+.tox

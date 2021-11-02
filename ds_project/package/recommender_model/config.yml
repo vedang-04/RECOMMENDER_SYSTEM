@@ -1,0 +1,8 @@
+package_name: recommender_model
+file_1: netflix_titles
+file_2: IMDb_movies
+file_3: IMDb_ratings
+pipeline_name: recommender_model
+pipeline_save_file: recommender_model_output_
+saved_enc: tfidf_encoder_
+random_state: 0

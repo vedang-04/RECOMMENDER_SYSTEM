@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>RECOMMENDER SYSTEM</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<div class="header">
+    <h1>RECOMMENDER SYSTEM</h1>
+    <p>Please fill the blank with Movie or TV Show for Recommendation</p>
+</div>
+<body>
+<form action="/recommendersystem" method="post">
+    <input type="text" id="assignment_file" name="assignment_file">
+    <input type="submit" value="Recommend">
+<div>
+    <p2>RESULT: </p2>
+    <p1>{{ result }}</p1>
+</div>
+</form>
+</body>
+</html>
+<style>
+    h1 {
+  color: red;
+  font-family: arial;
+  font-size: 300%;
+  text-align: center;
+}
+p {
+  color: black;
+  font-family: sans-serif;
+  font-size: 30px;
+  text-align: center;
+  padding-top: 25px;
+}
+p1 {
+  color: black;
+  font-family: sans-serif;
+  font-size: 150%;
+  padding-left: 20px;
+  line-height: 3;
+}
+p2 {
+  color: red;
+  font-family: sans-serif;
+  font-size: 150%;
+  line-height: 3;
+}
+input[type="text" i] {
+    padding: 10px 20px;
+    text-align: left;
+    font-size: 30px;
+    margin-left: 550px;
+}
+
+input[type="submit" i] {
+    appearance: auto;
+    user-select: none;
+    white-space: pre;
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    box-sizing: border-box;
+    background-color: -internal-light-dark(rgb(239, 239, 239), rgb(59, 59, 59));
+    color: -internal-light-dark(black, white);
+    padding: 1px 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+    font-size: 20px;
+    margin-left: 90px;
+    margin-top: 50px;
+}
+</style>

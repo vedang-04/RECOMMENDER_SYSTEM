@@ -1,0 +1,22 @@
+include *.txt
+include *.md
+include *.pkl
+include *.csv
+recursive-include ./recommender_model/*
+
+include recommender_model/datasets/
+include recommender_model/datasets/netflix_titles.csv
+include recommender_model/datasets/IMDb_movies.csv
+include recommender_model/datasets/IMDb_ratings.csv
+include recommender_model/datasets/ind_csv.csv
+include recommender_model/trained_models/*.pkl
+include recommender_model/VERSION
+include recommender_model/config.yml
+
+include ./requirements/requirements.txt
+include ./requirements/test_requirements.txt
+exclude *.log
+exclude *.cfg
+
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
