@@ -14,8 +14,12 @@ except:
     from config import settings
 
     from api import api_router
-from package.recommender_model.predict import make_recommendation_content, make_recommendation_genre, \
-    make_recommendation_country
+
+from package.recommender_model.predict import (
+    make_recommendation_content,
+    make_recommendation_country,
+    make_recommendation_genre,
+)
 
 
 def create_app() -> FastAPI:
@@ -44,7 +48,7 @@ def create_app() -> FastAPI:
 
     @root_router.get("/recommendersystem", response_class=HTMLResponse)
     def form_post_get(
-            request: Request,
+        request: Request,
     ):
         result = "Enter Content"
         return templates.TemplateResponse(
@@ -59,9 +63,9 @@ def create_app() -> FastAPI:
             prediction = make_recommendation_content(content_to_be_read)
             prediction1 = make_recommendation_genre(content_to_be_read)
             prediction2 = make_recommendation_country(content_to_be_read)
-            d=prediction['predictions']
-            d.update(prediction1['predictions'])
-            d.update(prediction2['predictions'])
+            d = prediction["predictions"]
+            d.update(prediction1["predictions"])
+            d.update(prediction2["predictions"])
             result = d
 
             return templates.TemplateResponse(

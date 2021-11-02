@@ -25,13 +25,13 @@ def run_training() -> None:
         columns=tv.get_feature_names(),
         index=df.title,
     )
-    # nn = NearestNeighbors(n_neighbors=11, metric="cosine", n_jobs=-1, p=2)
-    # nn.fit(stvdf.values)
-    # dist, ind = nn.kneighbors(X=stvdf.values, n_neighbors=11)
-    # ind_csv = pd.DataFrame(ind)
-    # load_file = "ind_csv.csv"
-    # load_path = DATASET_DIR / load_file
-    # ind_csv.to_csv(load_path)
+    nn = NearestNeighbors(n_neighbors=11, metric="cosine", n_jobs=-1, p=2)
+    nn.fit(stvdf.values)
+    dist, ind = nn.kneighbors(X=stvdf.values, n_neighbors=11)
+    ind_csv = pd.DataFrame(ind)
+    load_file = "ind_csv.csv"
+    load_path = DATASET_DIR / load_file
+    ind_csv.to_csv(load_path)
 
     from package.recommender_model.predict import (
         make_recommendation_content,

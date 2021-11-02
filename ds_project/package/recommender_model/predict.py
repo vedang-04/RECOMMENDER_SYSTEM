@@ -2,14 +2,14 @@ import typing as t
 
 import numpy as np
 import pandas as pd
+
+from package.recommender_model import __version__ as _version
+from package.recommender_model.config.core import DATASET_DIR, config
 from package.recommender_model.processing.data_manager import (
     create_dataset_movies_on_netflix,
     create_dataset_shows_on_netflix,
     load_dataset_main,
 )
-
-from package.recommender_model import __version__ as _version
-from package.recommender_model.config.core import DATASET_DIR, config
 
 
 def make_recommendation_content(movie: str) -> dict:
@@ -43,7 +43,7 @@ def make_recommendation_content(movie: str) -> dict:
         load_file = "ind_csv.csv"
         load_path = DATASET_DIR / load_file
         ind = pd.read_csv(load_path)
-        ind = ind[ind.columns[1:]]
+        ind = ind[ind.columns[1:]] # Check ind dataframe first before running this step.
         ind = np.array(ind)
         m = mdf.index[0]
         j = 0

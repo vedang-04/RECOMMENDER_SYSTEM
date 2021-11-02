@@ -65,8 +65,8 @@ def load_dataset_sub() -> pd.DataFrame:
             df2[["imdb_title_id", "weighted_average_vote"]],
             on="imdb_title_id",
         )
-            .drop_duplicates()
-            .drop("imdb_title_id", axis=1)
+        .drop_duplicates()
+        .drop("imdb_title_id", axis=1)
     )
     df = load_dataset_main()
     mer = pd.merge(df, df3, how="left", on=["title"])
@@ -95,15 +95,15 @@ def create_dataset_movies_on_netflix() -> pd.DataFrame:
     mer_nm["tg"] = mer_nm["listed_in"] + ", " + mer_nm["genre"]
     stg = (
         mer_nm.tg.str.strip()
-            .str.split(",")
-            .explode()
-            .str.strip()
-            .str.split("&")
-            .explode()
-            .str.strip()
-            .str.strip()
-            .str.split(" ")
-            .apply(lambda x: x[0])
+        .str.split(",")
+        .explode()
+        .str.strip()
+        .str.split("&")
+        .explode()
+        .str.strip()
+        .str.strip()
+        .str.split(" ")
+        .apply(lambda x: x[0])
     )
     stg = stg.replace(
         {
@@ -120,18 +120,18 @@ def create_dataset_movies_on_netflix() -> pd.DataFrame:
     stg = stg.to_frame("g")
     stg = (
         stg.reset_index()
-            .rename(columns={"index": "gpb"})
-            .groupby(["gpb", "g"])
-            .count()
-            .reset_index()
-            .set_index("gpb")
+        .rename(columns={"index": "gpb"})
+        .groupby(["gpb", "g"])
+        .count()
+        .reset_index()
+        .set_index("gpb")
     )
     stg = (
         stg.reset_index()
-            .groupby("gpb")
-            .agg(lambda x: x.tolist())
-            .g.apply(lambda x: ",".join(x))
-            .to_frame("g")
+        .groupby("gpb")
+        .agg(lambda x: x.tolist())
+        .g.apply(lambda x: ",".join(x))
+        .to_frame("g")
     )
     stg = pd.merge(
         stg,
@@ -184,12 +184,12 @@ def create_dataset_shows_on_netflix() -> pd.DataFrame:
     mer_ns["tgs"] = mer_ns["listed_in"] + ", " + mer_ns["genre"]
     stgs = (
         mer_ns.tgs.str.strip()
-            .str.split(",")
-            .explode()
-            .str.strip()
-            .str.split("&")
-            .explode()
-            .str.strip()
+        .str.split(",")
+        .explode()
+        .str.strip()
+        .str.split("&")
+        .explode()
+        .str.strip()
     )
     stgs = stgs.replace(
         {
@@ -222,18 +222,18 @@ def create_dataset_shows_on_netflix() -> pd.DataFrame:
     stgs = stgs.to_frame("g")
     stgs = (
         stgs.reset_index()
-            .rename(columns={"index": "gpb"})
-            .groupby(["gpb", "g"])
-            .count()
-            .reset_index()
-            .set_index("gpb")
+        .rename(columns={"index": "gpb"})
+        .groupby(["gpb", "g"])
+        .count()
+        .reset_index()
+        .set_index("gpb")
     )
     stgs = (
         stgs.reset_index()
-            .groupby("gpb")
-            .agg(lambda x: x.tolist())
-            .g.apply(lambda x: ",".join(x))
-            .to_frame("g")
+        .groupby("gpb")
+        .agg(lambda x: x.tolist())
+        .g.apply(lambda x: ",".join(x))
+        .to_frame("g")
     )
     stgs = pd.merge(
         stgs,
