@@ -43,7 +43,9 @@ def make_recommendation_content(movie: str) -> dict:
         load_file = "ind_csv.csv"
         load_path = DATASET_DIR / load_file
         ind = pd.read_csv(load_path)
-        ind = ind[ind.columns[1:]] # Check ind dataframe first before running this step.
+        ind = ind[
+            ind.columns[1:]
+        ]  # Check ind dataframe first before running this step.
         ind = np.array(ind)
         m = mdf.index[0]
         j = 0
