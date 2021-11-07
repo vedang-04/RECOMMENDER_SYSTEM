@@ -84,9 +84,9 @@ tox -e run<br>
 
 5] Once the application starts running go to http://localhost:8001/recommendersystem
 
-**More on this repository in this file:**<br>
+**More on this repository in this file:** https://drive.google.com/file/d/1nOQCYNwy4yLqpzeLjWL2xubG8qeLKW5z/view?usp=sharing<br>
 
-**Indepth Analysis and explanation of this repository in this file:**<br>
+**Indepth Analysis and explanation of this repository in this file:** https://drive.google.com/file/d/16b4EvfuRbhXnFMoTNd6cmHsJsOpd2kSa/view?usp=sharing<br>
 
 **The files in the above mentioned two links are available in documents of this repository**<br>
 
